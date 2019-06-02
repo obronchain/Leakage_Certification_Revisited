@@ -1,0 +1,35 @@
+date:       June 2019
+author:     Olivier Bronchain
+contact:    olivier.bronchain@uclouvain.be
+Institute:  UCLouvain Crypto Group
+eprint:     https://eprint.iacr.org/2019/132 
+
+REQUIREMENTS:
+ This code is written in Python3 and is mainly based on Numpy1.14 and Scipy1.1
+ running on a Linux distribution. The required packages are:
+    - numpy
+    - scipy
+    - matplotlib
+    - tqdm
+ These can be installed by running:
+    # sudo pip install numpy matplotlib tqdm scipy
+
+USAGE:
+ The code can be use to generate the simulations used in the paper "Leakage
+ Certification Revisited: Bounding Model Errors in Side-Channel Security Evaluations"
+ published at Crypto 2019. The parameters can be changed in main.py and have the
+ following usage:
+    -D      - number of shares
+    -var    - if a matrix, covariance matrix. if scalar, independent noise with variance var
+    -Nk     - Size of the secret space (i.e. 256 for 8 bits secrets)
+    -serial - Leakage of the shares in different dimensions
+
+ Once the desired parameters are set, one can start the script with:
+    python3 main.py
+
+
+FILES DESCRIPTION
+ Leakage_generation.py  - Generates leakage samples
+ MI_computations.py     - Actual MI computation
+ Models.py              - PDFs estimators
+ main.py                - Main script setting the parameters
